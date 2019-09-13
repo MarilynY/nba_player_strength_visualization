@@ -1,10 +1,10 @@
 import React from 'react';
-import { TopNavBar } from './TopNavBar';
+import { TopBar } from './TopBar';
 
 class App extends React.Component {
   render () {
     return (
-      <TopNavBar />
+      <TopBar />
     );
   }
 }
