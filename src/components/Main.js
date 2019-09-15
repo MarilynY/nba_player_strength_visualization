@@ -1,10 +1,13 @@
 import React from 'react';
-import { readdirSync } from 'fs';
+import { ShotChart } from './ShotChart';
+
 
 export class Main extends React.Component {
     render() {
         return (
-            <div>Main</div>
+            <div>
+                <ShotChart playerId={201939}/>
+            </div>
         );
     }
 }
