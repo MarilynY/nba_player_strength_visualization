@@ -6,7 +6,7 @@ export class Main extends React.Component {
     render() {
         return (
             <div>
-                <ShotChart playerId={ 203518 }/>
+                <ShotChart playerId={ 201939 }/>
             </div>
         );
     }
