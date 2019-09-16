@@ -8,6 +8,7 @@ class App extends React.Component {
       <div className="App">
         <TopBar />
         <Main />
+        
       </div>
     );
   }
