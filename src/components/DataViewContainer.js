@@ -39,7 +39,9 @@ export class DataViewContainer extends React.Component {
                     displayTooltip={this.state.displayTooltip}
                 />
                 <div className="filters">
-                    <CountSlider handleCountSliderChange={this.handleCountSliderChange}/>
+                    {this.state.chartType === 'hexbin' ? 
+                        <CountSlider handleCountSliderChange={this.handleCountSliderChange}/> : null
+                    }
                     <Row>
                         <Col span={13}>
                             <RadioGroup onChange={this.handleChartTypeChange} value={this.state.chartType}>
