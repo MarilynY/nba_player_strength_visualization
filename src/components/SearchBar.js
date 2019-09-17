@@ -1,9 +1,9 @@
 import React from 'react';
 import { AutoComplete, Input, Icon } from 'antd';
+import nba from 'nba';
 
+window.nba = nba;
 
-
-  
 export class SearchBar extends React.Component {
     state = {
       dataSource: [],
@@ -12,7 +12,9 @@ export class SearchBar extends React.Component {
     handleSearch = (value) => {
         console.log(value);
         this.setState({
-            dataSource: !value ? [] : [value, value.repeat(2), value.repeat(3)],
+            dataSource: !value ? [] : nba.searchPlayers(value).map(
+                ({fullName}) => fullName
+            )
         });
     };
   
