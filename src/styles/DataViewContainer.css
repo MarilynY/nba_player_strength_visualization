@@ -1,3 +1,7 @@
 .date-view {
     width: 550px;
+    overflow: hidden;
+}
+.filters {
+    margin-left: 90px;
 }
