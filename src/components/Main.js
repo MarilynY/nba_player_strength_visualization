@@ -13,15 +13,13 @@ export class Main extends React.Component {
     }
 
     componentDidMount() {
-        this.loadPlayerInfo(this.state.playerInfo.playerName);
+        this.loadPlayerInfo(this.state.playerInfo.playerId);
     }
 
-    loadPlayerInfo = (playerName) => {
-        //Given player name
+    loadPlayerInfo = (playerId) => {
         //0. get player id from player name
         //1. fire api to get player info
         //2. set state
-        const { playerId } = nba.findPlayer(playerName);
         nba.stats.playerInfo({
             PlayerID: playerId 
         }).then((info) => {
