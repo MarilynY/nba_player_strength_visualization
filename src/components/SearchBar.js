@@ -1,8 +1,10 @@
 import React from 'react';
 import { AutoComplete, Input, Icon } from 'antd';
 import nba from 'nba';
+import { PROFILE_PIC_URL_PREFIX } from '../constants';
 
-window.nba = nba;
+// window.nba = nba;
+const Option = AutoComplete.Option;
 
 export class SearchBar extends React.Component {
     state = {
@@ -10,10 +12,19 @@ export class SearchBar extends React.Component {
     };
   
     handleSearch = (value) => {
-        console.log(value);
+        console.log(nba.searchPlayers(value));
         this.setState({
             dataSource: !value ? [] : nba.searchPlayers(value).map(
-                ({fullName}) => fullName
+                ({fullName, playerId}) => (
+                    <Option key={playerId}>
+                        <img
+                            className="player-option-image"
+                            src={`${PROFILE_PIC_URL_PREFIX}/${playerId}.png`}
+                            alt={fullName}
+                        />
+                        <span className="player-option-label">{fullName}</span>
+                    </Option>
+                )
             )
         });
     };
