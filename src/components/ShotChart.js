@@ -15,7 +15,15 @@ export class ShotChart extends React.Component {
       displayTooltip: PropTypes.bool
     }
     //do not need componentDidMount, because didUpdate will be called right away
+    componentDidMount() {
+        this.update();
+    }
+
     componentDidUpdate() {
+        this.update();
+    }
+
+    update = () => {
         nba.stats.shots({
             PlayerID: this.props.playerId,
         }).then((response) => {
@@ -40,6 +48,7 @@ export class ShotChart extends React.Component {
             courtSelection.datum(final_shots).call(chart_shots);
         });
     }
+    
     render() {
         return (
             <div id="shot-chart"></div>

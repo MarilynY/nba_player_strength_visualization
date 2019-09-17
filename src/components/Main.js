@@ -3,13 +3,12 @@ import { DataViewContainer } from './DataViewContainer';
 import { Profile } from './Profile';
 import nba from 'nba';
 import { SearchBar } from './SearchBar';
+import { DEFAULT_PLAYER_INFO } from '../constants';
 
 export class Main extends React.Component {
     state = {
-        playerInfo: {
-            playerName: 'Stephen Curry',
-            playerId: 201939
-        }
+        isLoading: false,
+        playerInfo: DEFAULT_PLAYER_INFO
     }
 
     componentDidMount() {
@@ -20,6 +19,7 @@ export class Main extends React.Component {
         //0. get player id from player name
         //1. fire api to get player info
         //2. set state
+        this.setState({ isLoading: true });
         nba.stats.playerInfo({
             PlayerID: playerId 
         }).then((info) => {
@@ -29,10 +29,12 @@ export class Main extends React.Component {
             const playerInfo = Object.assign({}, info.commonPlayerInfo[0], info.playerHeadlineStats[0]);
             console.log("final player info:", playerInfo);
             this.setState({
-                playerInfo: playerInfo
+                playerInfo: playerInfo,
+                isLoading: false
             });
         }).catch((e) => {
             console.log(e);
+            this.setState({ isLoading: false });
         })
 
     }
@@ -40,10 +42,14 @@ export class Main extends React.Component {
         return (
             <div className="main">
                 <SearchBar loadPlayerInfo={this.loadPlayerInfo}/>
-                <div className="player">
-                    <Profile playerInfo={this.state.playerInfo}/>
-                    <DataViewContainer playerId={this.state.playerInfo.playerId}/>
-                </div>
+                {
+                    this.state.isLoading ? "is Loading" : (
+                        <div className="player">
+                            <Profile playerInfo={this.state.playerInfo}/>
+                            <DataViewContainer playerId={this.state.playerInfo.playerId}/>
+                        </div>
+                    )
+                }
             </div>
         );
     }
