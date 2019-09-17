@@ -10,7 +10,8 @@ window.d3_hexbin = {hexbin : hexbin}; // workaround library problem
 export class ShotChart extends React.Component {
     static propTypes = {
       playerId: PropTypes.number.isRequired,
-      minCount: PropTypes.number
+      minCount: PropTypes.number,
+      chartType: PropTypes.string
     }
     //do not need componentDidMount, because didUpdate will be called right away
     componentDidUpdate() {
@@ -32,7 +33,7 @@ export class ShotChart extends React.Component {
                 const chart_shots = shots()
                     .shotRenderThreshold(this.props.minCount)
                     .displayToolTips(true)
-                    .displayType("hexbin");
+                    .displayType(this.props.chartType)
             courtSelection.call(chart_court);
             courtSelection.datum(final_shots).call(chart_shots);
         });
