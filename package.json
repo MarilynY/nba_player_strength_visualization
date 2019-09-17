@@ -2,6 +2,7 @@
   "name": "nba_player_strength_visualization",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://MarilynY.github.io/nba_player_strength_visualization",
   "dependencies": {
     "antd": "^3.23.3",
     "d3-shotchart": "0.0.2",
@@ -15,7 +16,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+   "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
@@ -34,6 +35,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "homepage": "https://MarilynY.github.io/nba_player_strength_visualization"
+  }
 }
