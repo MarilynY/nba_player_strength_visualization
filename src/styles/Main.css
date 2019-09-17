@@ -1,6 +1,6 @@
 .main {
     display: flex;
-    width: 800px;
+    width: 750px;
     margin: 0 auto;
     /* or use justify-content: center */
     margin-top: 70px;
