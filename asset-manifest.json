@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/nba_player_strength_visualization/static/css/main.c8777b5f.chunk.css",
+    "main.js": "/nba_player_strength_visualization/static/js/main.f45b55f7.chunk.js",
+    "main.js.map": "/nba_player_strength_visualization/static/js/main.f45b55f7.chunk.js.map",
+    "runtime~main.js": "/nba_player_strength_visualization/static/js/runtime~main.b5377643.js",
+    "runtime~main.js.map": "/nba_player_strength_visualization/static/js/runtime~main.b5377643.js.map",
+    "static/css/2.96121624.chunk.css": "/nba_player_strength_visualization/static/css/2.96121624.chunk.css",
+    "static/js/2.0da646c3.chunk.js": "/nba_player_strength_visualization/static/js/2.0da646c3.chunk.js",
+    "static/js/2.0da646c3.chunk.js.map": "/nba_player_strength_visualization/static/js/2.0da646c3.chunk.js.map",
+    "index.html": "/nba_player_strength_visualization/index.html",
+    "precache-manifest.dffde723d158f0660f5791749b8df30b.js": "/nba_player_strength_visualization/precache-manifest.dffde723d158f0660f5791749b8df30b.js",
+    "service-worker.js": "/nba_player_strength_visualization/service-worker.js",
+    "static/css/2.96121624.chunk.css.map": "/nba_player_strength_visualization/static/css/2.96121624.chunk.css.map",
+    "static/css/main.c8777b5f.chunk.css.map": "/nba_player_strength_visualization/static/css/main.c8777b5f.chunk.css.map",
+    "static/media/logo.svg": "/nba_player_strength_visualization/static/media/logo.9470e2d5.svg"
+  }
+}
