@@ -35,7 +35,7 @@ export class SearchBar extends React.Component {
     }
   
     render() {
-      const { dataSource, value } = this.state;
+      const { dataSource } = this.state;
       return (
         <div>
             <AutoComplete
